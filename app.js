@@ -1,18 +1,18 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
-const { dbDev, dbProd } = require("./server/config");
+const { dbDev } = require("./server/config");
 const limiterMiddleware = require("./server/middlewares/limiter.middleware").middleware;
 
 const app = express();
 const mongoose = require("mongoose");
 
-const port = 5001;
+const port = process.env.PORT || 5001;
 
 
 mongoose.Promise = global.Promise;
 mongoose
-  .connect(app.get("env") === "development" ? dbDev : dbProd, { useNewUrlParser: true })
+  .connect(app.get("env") === "development" ? dbDev : process.env.DB_STRING, { useNewUrlParser: true })
   .then(function (res) {
     console.log("Connected to Database Successfully.");
   })
