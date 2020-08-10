@@ -1,7 +1,7 @@
 {
-  "name": "api.account.pluoro.com",
+  "name": "api.pluoro.com",
   "version": "1.0.0",
-  "description": "api of the pluoro account project",
+  "description": "api of the pluoro project",
   "main": "app.js",
   "pkg": {},
   "scripts": {
@@ -11,19 +11,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ivulovic/api.account.pluoro.com.git"
+    "url": "git+https://github.com/ivulovic/api.pluoro.com.git"
   },
   "keywords": [
     "pluoro",
-    "account",
     "api"
   ],
   "author": "Ivan Vulovic",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ivulovic/api.account.pluoro.com/issues"
+    "url": "https://github.com/ivulovic/api.pluoro.com/issues"
   },
-  "homepage": "https://github.com/ivulovic/api.account.pluoro.com#readme",
+  "homepage": "https://github.com/ivulovic/api.pluoro.com#readme",
   "devDependencies": {
     "nodemon": "^2.0.4"
   },

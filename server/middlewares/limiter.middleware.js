@@ -19,16 +19,6 @@ const rateLimiterRedis = new RateLimiterRedis({
   insuranceLimiter: rateLimiterMemory,
 });
 
-const loginAttemptLimiterRedis = new RateLimiterRedis({
-  storeClient: redisClient,
-  keyPrefix: "loggin_attempt",
-  points: 3, // Can fail 3 times
-  inmemoryBlockOnConsumed: 3,
-  duration: 60, // per minute 
-  blockDuration: 60 * 15, // block for 15 minutes
-  inmemoryBlockDuration: 60 * 15,
-});
-
 const rateLimiterMiddleware = (req, res, next) => {
   rateLimiterRedis.consume(req.ip)
     .then(() => {
@@ -43,7 +33,4 @@ module.exports = {
   middleware: {
     rateLimiterMiddleware
   },
-  limiter: {
-    loginAttemptLimiterRedis
-  }
 }
