@@ -1,1 +1,1 @@
-API of my personal [pluoro account](https://pluoro.com/account) website
+API of my personal [pluoro](https://pluoro.com) website
