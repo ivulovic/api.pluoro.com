@@ -36,8 +36,16 @@ app.use(limiterMiddleware.rateLimiterMiddleware);
 // apps
 const appRoutes = require("./server/routes/app.routes");
 
+// Notes
+const directoryRoutes = require("./server/routes/notes/directory.routes");
+const noteRoutes = require("./server/routes/notes/note.routes");
+
 // ROUTES
 app.use("/api/app", appRoutes);
+
+app.use("/api/notes/directories", directoryRoutes);
+app.use("/api/notes/notes", noteRoutes);
+
 
 app.listen(port, () => {
   console.log(`Main app listening on ${port}`)
